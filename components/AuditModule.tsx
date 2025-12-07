@@ -86,7 +86,7 @@ const AuditModule: React.FC<AuditModuleProps> = ({ isOpen, onClose, theme, data 
                                 <a href={whatsappUrl} target="_blank" className="bg-[#00E676] text-black font-black border-4 border-black py-4 px-6 shadow-[6px_6px_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0_#000] transition-all flex items-center justify-center gap-3 text-xl no-underline uppercase">
                                     <MessageCircle size={28} strokeWidth={3} /> Whatsapp
                                 </a>
-                                <a href={mailtoUrl} className="bg-white text-black font-black border-4 border-black py-4 px-6 shadow-[6px_6px_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0_#000] transition-all flex items-center justify-center gap-3 text-xl no-underline uppercase">
+                                <a href={mailtoUrl} target="_blank" className="bg-white text-black font-black border-4 border-black py-4 px-6 shadow-[6px_6px_0_#000] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0_#000] transition-all flex items-center justify-center gap-3 text-xl no-underline uppercase">
                                     <Mail size={28} strokeWidth={3} /> Email
                                 </a>
                             </div>
@@ -184,7 +184,7 @@ const AuditModule: React.FC<AuditModuleProps> = ({ isOpen, onClose, theme, data 
                                     <a href={whatsappUrl} target="_blank" className="block w-full bg-[#fbbf24] text-black font-black text-center py-4 hover:bg-white transition-all uppercase tracking-[0.15em] text-sm no-underline shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
                                         &gt; Contactar por WhatsApp
                                     </a>
-                                    <a href={mailtoUrl} className="block w-full border border-[#fbbf24] text-[#fbbf24] font-bold text-center py-4 hover:bg-[#fbbf24]/10 transition-colors uppercase tracking-[0.15em] text-sm no-underline">
+                                    <a href={mailtoUrl} target="_blank" className="block w-full border border-[#fbbf24] text-[#fbbf24] font-bold text-center py-4 hover:bg-[#fbbf24]/10 transition-colors uppercase tracking-[0.15em] text-sm no-underline">
                                         &gt; Enviar Reporte por Email
                                     </a>
                                 </div>
@@ -262,7 +262,7 @@ const AuditModule: React.FC<AuditModuleProps> = ({ isOpen, onClose, theme, data 
                                     <a href={whatsappUrl} target="_blank" className="min-w-[75px] px-2 py-1 bg-[#c0c0c0] text-black text-[11px] shadow-[inset_-1px_-1px_#0a0a0a,inset_1px_1px_#fff,inset_-2px_-2px_grey,inset_2px_2px_#fff] active:shadow-[inset_1px_1px_#0a0a0a,inset_-1px_-1px_#fff] active:translate-y-[1px] outline-none border border-transparent focus:border-black focus:border-dotted text-center no-underline">
                                         WhatsApp
                                     </a>
-                                    <a href={mailtoUrl} className="min-w-[75px] px-2 py-1 bg-[#c0c0c0] text-black text-[11px] shadow-[inset_-1px_-1px_#0a0a0a,inset_1px_1px_#fff,inset_-2px_-2px_grey,inset_2px_2px_#fff] active:shadow-[inset_1px_1px_#0a0a0a,inset_-1px_-1px_#fff] active:translate-y-[1px] outline-none border border-transparent focus:border-black focus:border-dotted text-center no-underline">
+                                    <a href={mailtoUrl} target="_blank" className="min-w-[75px] px-2 py-1 bg-[#c0c0c0] text-black text-[11px] shadow-[inset_-1px_-1px_#0a0a0a,inset_1px_1px_#fff,inset_-2px_-2px_grey,inset_2px_2px_#fff] active:shadow-[inset_1px_1px_#0a0a0a,inset_-1px_-1px_#fff] active:translate-y-[1px] outline-none border border-transparent focus:border-black focus:border-dotted text-center no-underline">
                                         Email
                                     </a>
                                 </div>
@@ -338,7 +338,7 @@ const AuditModule: React.FC<AuditModuleProps> = ({ isOpen, onClose, theme, data 
                                     <a href={whatsappUrl} target="_blank" className="group py-6 border-b border-gray-300 hover:bg-[#FF3B30] transition-colors no-underline flex items-center justify-between cursor-pointer relative overflow-hidden">
                                         <span className="relative z-10 font-bold text-sm tracking-widest text-black group-hover:text-white transition-colors pl-2">01. CONTACTAR (WHATSAPP)</span>
                                     </a>
-                                    <a href={mailtoUrl} className="group py-6 border-b border-black hover:bg-black transition-colors no-underline flex items-center justify-between cursor-pointer relative overflow-hidden">
+                                    <a href={mailtoUrl} target="_blank" className="group py-6 border-b border-black hover:bg-black transition-colors no-underline flex items-center justify-between cursor-pointer relative overflow-hidden">
                                         <span className="relative z-10 font-bold text-sm tracking-widest text-gray-500 group-hover:text-white transition-colors pl-2">02. SOLICITAR INFORME (EMAIL)</span>
                                     </a>
                                 </div>
@@ -416,7 +416,7 @@ const AuditModule: React.FC<AuditModuleProps> = ({ isOpen, onClose, theme, data 
                     {/* Bottom Action Bar */}
                     {scanStep >= 3 && (
                         <div className="bg-[#F0F0F0] border-t border-[#D9D9D9] p-3 flex justify-end gap-2 shrink-0">
-                            <a href={mailtoUrl} className="px-4 py-1 min-w-[75px] border border-[#003C74] rounded-[3px] bg-gradient-to-b from-white to-[#ECE9D8] text-black text-[11px] hover:to-[#ffe48d] no-underline flex items-center justify-center shadow-[0_1px_2px_rgba(0,0,0,0.1)] active:shadow-inner cursor-pointer">
+                            <a href={mailtoUrl} target="_blank" className="px-4 py-1 min-w-[75px] border border-[#003C74] rounded-[3px] bg-gradient-to-b from-white to-[#ECE9D8] text-black text-[11px] hover:to-[#ffe48d] no-underline flex items-center justify-center shadow-[0_1px_2px_rgba(0,0,0,0.1)] active:shadow-inner cursor-pointer">
                                 Enviar Email
                             </a>
                             <a href={whatsappUrl} target="_blank" className="px-4 py-1 min-w-[75px] border border-[#003C74] rounded-[3px] bg-gradient-to-b from-white to-[#ECE9D8] text-black text-[11px] font-bold hover:to-[#ffe48d] no-underline flex items-center justify-center shadow-[0_1px_2px_rgba(0,0,0,0.1)] active:shadow-inner ring-1 ring-inset ring-white/50 cursor-pointer">
@@ -511,7 +511,7 @@ const AuditModule: React.FC<AuditModuleProps> = ({ isOpen, onClose, theme, data 
                                     <PenTool size={20} className="stroke-[2.5px]" />
                                     <span>Escribir por WhatsApp</span>
                                 </a>
-                                <a href={mailtoUrl} className="py-3 px-6 border-[3px] border-gray-400 text-gray-500 bg-white hover:bg-gray-50 transition-colors no-underline text-lg font-bold"
+                                <a href={mailtoUrl} target="_blank" className="py-3 px-6 border-[3px] border-gray-400 text-gray-500 bg-white hover:bg-gray-50 transition-colors no-underline text-lg font-bold"
                                     style={{ borderRadius: '15px 225px 15px 255px / 255px 15px 225px 15px', transform: 'rotate(1deg)' }}>
                                     Enviar un correo
                                 </a>
@@ -624,7 +624,7 @@ const AuditModule: React.FC<AuditModuleProps> = ({ isOpen, onClose, theme, data 
                                             <MessageCircle size={18} /> Contactar por WhatsApp
                                         </a>
 
-                                        <a href={mailtoUrl} className="w-full bg-white text-black border-2 border-black py-4 px-6 hover:-translate-y-1 hover:shadow-[6px_6px_0_#000] transition-all text-center uppercase tracking-widest font-bold text-sm flex items-center justify-center gap-2 no-underline cursor-pointer group">
+                                        <a href={mailtoUrl} target="_blank" className="w-full bg-white text-black border-2 border-black py-4 px-6 hover:-translate-y-1 hover:shadow-[6px_6px_0_#000] transition-all text-center uppercase tracking-widest font-bold text-sm flex items-center justify-center gap-2 no-underline cursor-pointer group">
                                             <Scissors size={18} className="group-hover:-rotate-12 transition-transform" /> Enviar Reporte por Email
                                         </a>
                                     </div>
