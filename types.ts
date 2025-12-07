@@ -5,6 +5,7 @@ export enum Theme {
     Retro95 = 'retro95',
     Sketch = 'sketch',
     WindowsXP = 'windowsxp',
+    Swiss = 'swiss',
 }
 
 export interface ClientData {

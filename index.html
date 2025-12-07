@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&family=Merriweather:ital,wght@0,300;0,700;1,400&family=Outfit:wght@300;500;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;700&family=Merriweather:ital,wght@0,300;0,700;1,400&family=Outfit:wght@300;500;800&family=Space+Grotesk:wght@400;700&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -50,34 +53,49 @@
         }
     </script>
     <style>
-        body { margin: 0; padding: 0; overflow-x: hidden; }
-        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
         /* Hide scrollbar but keep scroll functionality */
         .scrollbar-hide {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
-        
+
         /* CRT Effect */
         .crt-overlay {
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
             background-size: 100% 4px;
             pointer-events: none;
         }
+
         .crt-flicker {
             animation: flicker 0.15s infinite;
             pointer-events: none;
         }
+
         @keyframes flicker {
-            0% { opacity: 0.95; }
-            50% { opacity: 0.92; }
-            100% { opacity: 0.96; }
+            0% {
+                opacity: 0.95;
+            }
+
+            50% {
+                opacity: 0.92;
+            }
+
+            100% {
+                opacity: 0.96;
+            }
         }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.2.1",
@@ -87,10 +105,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/index.css">
 </head>
+
 <body>
     <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

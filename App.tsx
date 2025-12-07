@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Theme, ClientData } from './types';
-import Navbar from './components/Navbar';
-import CollageView from './components/views/CollageView';
-import EditorialView from './components/views/EditorialView';
-import IndustrialView from './components/views/IndustrialView';
-import Retro95View from './components/views/Retro95View';
-import SketchView from './components/views/SketchView';
-import WindowsXPView from './components/views/WindowsXPView';
+import { Theme, ClientData } from '@/types';
+import Navbar from '@/components/Navbar';
+import CollageView from '@/components/views/CollageView';
+import EditorialView from '@/components/views/EditorialView';
+import IndustrialView from '@/components/views/IndustrialView';
+import Retro95View from '@/components/views/Retro95View';
+import SketchView from '@/components/views/SketchView';
+import WindowsXPView from '@/components/views/WindowsXPView';
+import SwissView from '@/components/views/SwissView';
 
 // --- CONFIGURATION ---
 // Change these values to personalize the pitch for your client
@@ -29,6 +30,7 @@ const App: React.FC = () => {
             case Theme.Retro95: return <Retro95View data={clientData} />;
             case Theme.Sketch: return <SketchView data={clientData} />;
             case Theme.WindowsXP: return <WindowsXPView data={clientData} />;
+            case Theme.Swiss: return <SwissView data={clientData} />;
             default: return <CollageView data={clientData} />;
         }
     };

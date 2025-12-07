@@ -22,6 +22,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeTheme, onThemeChange }) => {
                 return "bg-white border-2 border-gray-800 rounded-sm p-2 gap-4 font-architect shadow-md";
             case Theme.WindowsXP:
                 return "bg-[#245DDA] p-1.5 rounded-t-lg border-b-4 border-[#E68B2C] gap-1 font-tahoma shadow-md";
+            case Theme.Swiss:
+                return "bg-[#EAEAEA] border-b-2 border-black p-2 gap-4 font-sans";
             default:
                 return "bg-white p-2 rounded-lg";
         }
@@ -55,6 +57,10 @@ const Navbar: React.FC<NavbarProps> = ({ activeTheme, onThemeChange }) => {
                 return isActive
                     ? "bg-white text-black font-bold shadow-sm rounded px-4 py-1"
                     : "text-white hover:bg-[#3D85F3] hover:shadow-inner rounded px-4 py-1";
+            case Theme.Swiss:
+                return isActive
+                    ? "bg-[#FF3B30] text-white font-bold px-3 py-1"
+                    : "text-black hover:text-[#FF3B30] px-3 py-1";
             default:
                 return "";
         }
