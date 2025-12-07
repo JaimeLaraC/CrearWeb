@@ -31,7 +31,7 @@ const Retro95View: React.FC<ViewProps> = ({ data }) => {
 
     return (
         <div
-            className="w-full min-h-screen bg-[#008080] font-tahoma overflow-x-hidden relative cursor-default select-none perspective-[2000px] pt-14 md:pt-0"
+            className="w-full min-h-screen bg-[#008080] font-tahoma overflow-hidden relative cursor-default select-none perspective-[2000px] pt-14 md:pt-0"
             onMouseMove={handleMouseMove}
         >
             {/* Desktop Icons (Parallax Background) - Hidden on mobile */}

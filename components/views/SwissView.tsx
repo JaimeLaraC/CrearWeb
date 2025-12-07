@@ -37,7 +37,7 @@ const SwissView: React.FC<ViewProps> = ({ data }) => {
 
     return (
         <div
-            className="w-full min-h-screen bg-[#EAEAEA] text-[#111] font-sans relative flex flex-col items-center justify-center py-24 px-4 perspective-2000 cursor-none"
+            className="w-full min-h-screen bg-[#EAEAEA] text-[#111] font-sans relative flex flex-col items-center justify-center py-24 px-4 perspective-2000 cursor-none overflow-hidden"
             onMouseMove={handleMouseMove}
         >
             {/* --- GLOBAL CROSSHAIR CURSOR (Architect Style) --- */}

@@ -15,7 +15,7 @@ const CollageView: React.FC<ViewProps> = ({ data }) => {
 
     return (
         <div
-            className="w-full min-h-screen bg-yellow-400 p-4 md:p-6 pt-16 md:pt-6 flex items-center justify-center overflow-x-hidden font-sans relative perspective-container"
+            className="w-full min-h-screen bg-yellow-400 p-4 md:p-6 pt-16 md:pt-6 flex items-center justify-center overflow-hidden font-sans relative perspective-container"
             onMouseMove={handleMouseMove}
         >
             {/* Dynamic Background Pattern */}
