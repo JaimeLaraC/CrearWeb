@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ViewProps } from '../../types';
 import { Mail, Minus, Square, X, HardDrive, Printer, ChevronRight, CircleHelp, Globe, Trash2, Reply, Forward, Send, FileText, FolderOpen } from 'lucide-react';
 
-const WindowsXPView: React.FC<ViewProps> = ({ data }) => {
+const WindowsXPView: React.FC<ViewProps> = ({ data, onAuditClick }) => {
     return (
         <div className="w-full min-h-screen font-tahoma p-2 md:p-8 pt-20 md:pt-8 flex items-start md:items-center justify-center overflow-x-hidden bg-cover bg-center select-none" style={{ backgroundImage: "url('https://upload.wikimedia.org/wikipedia/en/7/7d/Bliss.png')" }}>
             <style>{`
@@ -154,12 +154,12 @@ const WindowsXPView: React.FC<ViewProps> = ({ data }) => {
                             </p>
 
                             <div className="flex gap-3 mt-8 border-t border-[#eee] pt-4">
-                                <a
-                                    href={`mailto:${data.senderEmail}`}
+                                <button
+                                    onClick={onAuditClick}
                                     className="px-4 py-1.5 bg-white border border-[#003399] text-[#003399] hover:bg-[#003399] hover:text-white transition-colors no-underline text-xs font-bold shadow-[1px_1px_0_rgba(0,0,0,0.1)] flex items-center gap-2 rounded-sm"
                                 >
                                     <Reply size={14} /> Responder Oferta
-                                </a>
+                                </button>
                                 <a
                                     href={data.portfolioUrl}
                                     target="_blank"

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ViewProps } from '../../types';
 import { Newspaper, ArrowUpRight, Scissors } from 'lucide-react';
 
-const EditorialView: React.FC<ViewProps> = ({ data }) => {
+const EditorialView: React.FC<ViewProps> = ({ data, onAuditClick }) => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
     const handleMouseMove = (e: React.MouseEvent) => {
@@ -93,9 +93,9 @@ const EditorialView: React.FC<ViewProps> = ({ data }) => {
                     <div className="flex flex-col md:flex-row gap-6 items-end justify-between mt-4">
 
                         {/* The Coupon */}
-                        <a
-                            href={`mailto:${data.senderEmail}`}
-                            className="group relative border-2 border-dashed border-black p-4 flex-1 w-full hover:bg-yellow-50 transition-colors cursor-pointer no-underline"
+                        <button
+                            onClick={onAuditClick}
+                            className="group relative border-2 border-dashed border-black p-4 flex-1 w-full hover:bg-yellow-50 transition-colors cursor-pointer no-underline text-left"
                         >
                             <div className="absolute -top-3 -left-3 bg-[#fffdfa] p-1 text-black rotate-[-45deg] group-hover:rotate-0 transition-transform">
                                 <Scissors size={20} />
@@ -105,7 +105,7 @@ const EditorialView: React.FC<ViewProps> = ({ data }) => {
                                 Auditoría<br />Gratuita
                             </p>
                             <p className="text-[10px] mt-2 font-mono text-gray-500">Válido para su sitio web</p>
-                        </a>
+                        </button>
 
                         {/* Sticky Note for Portfolio */}
                         <div className="relative transform rotate-3 hover:rotate-6 transition-transform duration-300">

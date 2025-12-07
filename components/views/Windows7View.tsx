@@ -2,10 +2,10 @@ import React from 'react';
 import { ViewProps } from '../../types';
 import { CircleHelp, User, Paperclip, Send, Globe } from 'lucide-react';
 
-const Windows7View: React.FC<ViewProps> = ({ data }) => {
+const Windows7View: React.FC<ViewProps> = ({ data, onAuditClick }) => {
     return (
         <div className="w-full h-full font-sans p-6 pt-24 flex items-center justify-center overflow-hidden bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')" }}>
-             <style>{`
+            <style>{`
                 .win7-scroll::-webkit-scrollbar { width: 17px; height: 17px; background-color: #F0F0F0; }
                 .win7-scroll::-webkit-scrollbar-thumb { background-color: #CDD3E6; border: 1px solid #fff; box-shadow: inset 1px 0 0 #A8A8A8, inset 0 1px 0 #A8A8A8; }
                 .win7-scroll::-webkit-scrollbar-thumb:hover { background-color: #A6B4CD; }
@@ -17,7 +17,7 @@ const Windows7View: React.FC<ViewProps> = ({ data }) => {
                 <div className="absolute inset-0 z-0 bg-[#bdcce4]/30"></div>
                 <div className="absolute top-0 left-0 right-0 h-[40%] bg-gradient-to-b from-white/50 to-transparent opacity-80 pointer-events-none z-0"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent opacity-50 pointer-events-none z-0"></div>
-                
+
                 {/* Title Bar */}
                 <div className="relative z-20 h-[30px] flex justify-between items-start px-2 pt-1.5 select-none">
                     <div className="flex items-center gap-2 pl-1">
@@ -64,15 +64,15 @@ const Windows7View: React.FC<ViewProps> = ({ data }) => {
                         <h1 className="text-[24px] font-normal text-[#003399] mb-4 tracking-tight leading-none">Mejora Tu Presencia Digital</h1>
                         <div className="w-full h-px bg-gradient-to-r from-[#d9d9d9] via-[#d9d9d9] to-transparent mb-6"></div>
                         <p className="text-[#1e1e1e] text-[15px] leading-relaxed mb-8">
-                            Hola {data.businessName}, he notado que vuestro negocio no tiene una web moderna. En {new Date().getFullYear()}, 
-                            una presencia digital rápida y accesible es crucial. Soy {data.senderName}, ingeniero de software, 
+                            Hola {data.businessName}, he notado que vuestro negocio no tiene una web moderna. En {new Date().getFullYear()},
+                            una presencia digital rápida y accesible es crucial. Soy {data.senderName}, ingeniero de software,
                             y puedo crearos una web que convierta visitantes en clientes.
                         </p>
                     </div>
 
                     {/* Footer Actions */}
                     <div className="bg-[#f5f6f7] border-t border-[#d9d9d9] p-3 flex justify-between items-center h-14">
-                        <a 
+                        <a
                             href={data.portfolioUrl}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -84,14 +84,14 @@ const Windows7View: React.FC<ViewProps> = ({ data }) => {
                             <button className="px-4 py-1 text-[12px] text-black border border-[#b1b1b1] bg-gradient-to-b from-[#f4f4f4] to-[#e6e6e6] hover:from-[#eef5fa] hover:to-[#dcecf7] hover:border-[#3c7fb1] rounded-[2px] shadow-[0_1px_2px_rgba(0,0,0,0.1)]">
                                 Descartar
                             </button>
-                            <a 
-                                href={`mailto:${data.senderEmail}`}
+                            <button
+                                onClick={onAuditClick}
                                 className="group relative px-6 py-1 border border-[#707070] rounded-[2px] bg-gradient-to-b from-[#f2f2f2] via-[#e6e6e6] to-[#cfcfcf] hover:from-[#eaf6fd] hover:to-[#a7d9f5] hover:border-[#3c7fb1] shadow-[0_1px_2px_rgba(0,0,0,0.1)] flex items-center gap-2 active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.2)] active:translate-y-px no-underline"
                             >
                                 <span className="text-[13px] font-semibold text-[#1e1e1e] relative z-10">Auditoría Gratuita</span>
                                 <Send size={13} className="text-[#1e1e1e] relative z-10" />
                                 <div className="absolute top-0 left-0 right-0 h-[50%] bg-gradient-to-b from-white/60 to-transparent pointer-events-none rounded-t-[2px]"></div>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@ const Windows7View: React.FC<ViewProps> = ({ data }) => {
     );
 };
 
-const Win7Btn: React.FC<{type: 'minimize'|'maximize'|'close'}> = ({ type }) => {
+const Win7Btn: React.FC<{ type: 'minimize' | 'maximize' | 'close' }> = ({ type }) => {
     if (type === 'close') {
         return (
             <button className="h-[26px] w-[48px] flex items-center justify-center bg-transparent hover:bg-[#e04343] hover:shadow-[inset_0_1px_0_rgba(255,150,150,0.5),inset_0_0_5px_rgba(150,0,0,0.5)] border border-transparent hover:border-[#b01e1e] rounded-b-[4px] transition-all group ml-0.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
@@ -122,13 +122,13 @@ const Win7Btn: React.FC<{type: 'minimize'|'maximize'|'close'}> = ({ type }) => {
     );
 };
 
-const ToolbarBtn: React.FC<{children: React.ReactNode, bold?: boolean}> = ({children, bold}) => (
+const ToolbarBtn: React.FC<{ children: React.ReactNode, bold?: boolean }> = ({ children, bold }) => (
     <button className={`px-3 py-1 hover:bg-white/50 hover:border-white/60 border border-transparent rounded-[2px] transition-all ${bold ? 'font-bold' : ''}`}>
         {children}
     </button>
 );
 
-const AddressRow: React.FC<{label: string, value?: string}> = ({label, value}) => (
+const AddressRow: React.FC<{ label: string, value?: string }> = ({ label, value }) => (
     <div className="flex items-center h-8">
         <button className="w-16 text-right pr-3 text-[#586c85] hover:bg-[#dfeaf4] border border-transparent hover:border-[#b6d0e6] text-[12px] h-6 flex items-center justify-end rounded-[2px] transition-colors">
             {label}

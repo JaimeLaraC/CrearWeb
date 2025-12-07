@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Grid, Maximize } from 'lucide-react';
 import { ViewProps } from '../../types';
 
-const SwissView: React.FC<ViewProps> = ({ data }) => {
+const SwissView: React.FC<ViewProps> = ({ data, onAuditClick }) => {
     // Target position (where mouse is)
     const [targetPos, setTargetPos] = useState({ x: 0, y: 0 });
     // Current position (for smooth animation/lerp)
@@ -146,16 +146,16 @@ const SwissView: React.FC<ViewProps> = ({ data }) => {
 
                     {/* Footer: Expandable Actions */}
                     <div className="mt-4 md:mt-8 grid grid-cols-2 gap-0 border-t border-black">
-                        <a
-                            href={`mailto:${data.senderEmail}`}
-                            className="group relative h-14 md:h-20 border-r border-black flex items-center justify-center overflow-hidden hover:bg-[#FF3B30] transition-colors duration-300"
+                        <button
+                            onClick={onAuditClick}
+                            className="group relative h-14 md:h-20 border-r border-black flex items-center justify-center overflow-hidden hover:bg-[#FF3B30] transition-colors duration-300 w-full"
                         >
                             <span className="relative z-10 font-bold text-sm md:text-xl tracking-tight group-hover:text-white transition-colors flex items-center gap-1 md:gap-2">
                                 CONTACTAR <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                             </span>
                             {/* Hover Reveal Effect */}
                             <div className="absolute inset-0 bg-[#FF3B30] transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                        </a>
+                        </button>
 
                         <a
                             href={data.portfolioUrl}

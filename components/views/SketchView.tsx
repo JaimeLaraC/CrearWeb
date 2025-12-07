@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ViewProps } from '../../types';
 import { PenTool, ArrowUpRight, CheckCircle } from 'lucide-react';
 
-const SketchView: React.FC<ViewProps> = ({ data }) => {
+const SketchView: React.FC<ViewProps> = ({ data, onAuditClick }) => {
     // Parallax state
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -84,14 +84,14 @@ const SketchView: React.FC<ViewProps> = ({ data }) => {
                             </ul>
 
                             <div className="pt-6 flex flex-wrap gap-4">
-                                <a
-                                    href={`mailto:${data.senderEmail}`}
+                                <button
+                                    onClick={onAuditClick}
                                     className="px-6 py-3 bg-gray-900 text-white text-xl hover:bg-blue-600 transition-colors transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2 no-underline group"
                                     style={{ borderRadius: "255px 15px 225px 15px / 15px 225px 15px 255px" }}
                                 >
                                     <PenTool size={20} className="group-hover:rotate-12 transition-transform" />
                                     Empezar Proyecto
-                                </a>
+                                </button>
                                 <a
                                     href={data.portfolioUrl}
                                     target="_blank"

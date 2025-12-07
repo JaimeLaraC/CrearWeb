@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ViewProps } from '../../types';
 import { TriangleAlert, Hammer, ExternalLink, Cog, Power, Activity, Gauge } from 'lucide-react';
 
-const IndustrialView: React.FC<ViewProps> = ({ data }) => {
+const IndustrialView: React.FC<ViewProps> = ({ data, onAuditClick }) => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [systemLoaded, setSystemLoaded] = useState(false);
 
@@ -123,8 +123,8 @@ const IndustrialView: React.FC<ViewProps> = ({ data }) => {
                     {/* Action Zone */}
                     <div className="flex flex-col gap-3 relative z-10">
                         {/* Primary Button */}
-                        <a
-                            href={`mailto:${data.senderEmail}`}
+                        <button
+                            onClick={onAuditClick}
                             className="relative w-full group bg-[#fbbf24] text-black font-black uppercase py-4 px-6 flex items-center justify-between no-underline overflow-hidden hover:brightness-110 transition-all active:scale-[0.99]"
                             style={{ clipPath: "polygon(0 0, 100% 0, 98% 100%, 2% 100%)" }}
                         >
@@ -139,7 +139,7 @@ const IndustrialView: React.FC<ViewProps> = ({ data }) => {
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity hazard-bg"></div>
 
                             <Activity className="relative z-10 animate-bounce" />
-                        </a>
+                        </button>
 
                         {/* Secondary Button */}
                         <a

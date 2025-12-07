@@ -97,10 +97,3 @@ CrearWeb/
 
 MIT © Jaime Lara
 
----
-
-<div align="center">
-
-**Hecho con ❤️ para diseñadores y desarrolladores web**
-
-</div>

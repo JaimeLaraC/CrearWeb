@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ViewProps } from '../../types';
 import { Scissors, ExternalLink, Zap, Sparkles } from 'lucide-react';
 
-const CollageView: React.FC<ViewProps> = ({ data }) => {
+const CollageView: React.FC<ViewProps> = ({ data, onAuditClick }) => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
     const handleMouseMove = (e: React.MouseEvent) => {
@@ -91,13 +91,13 @@ const CollageView: React.FC<ViewProps> = ({ data }) => {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-                        <a
-                            href={`mailto:${data.senderEmail}`}
+                        <button
+                            onClick={onAuditClick}
                             className="group relative bg-blue-600 text-white font-black text-lg px-6 py-3 rounded-full shadow-[4px_4px_0px_#000] border-2 border-black flex items-center gap-2 no-underline hover:bg-blue-500 hover:translate-y-1 hover:shadow-[2px_2px_0px_#000] transition-all hover:scale-105"
                         >
                             <Scissors className="transform rotate-90 group-hover:rotate-180 transition-transform duration-500" size={20} />
                             <span>Auditoría Gratuita</span>
-                        </a>
+                        </button>
 
                         {/* Portfolio Button (Sticker Style) */}
                         <a

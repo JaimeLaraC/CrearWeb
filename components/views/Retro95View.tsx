@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ViewProps } from '../../types';
 import { Monitor, Minus, Square, X, Globe, HardDrive, Trash2, Folder, Save, Hourglass, MousePointer } from 'lucide-react';
 
-const Retro95View: React.FC<ViewProps> = ({ data }) => {
+const Retro95View: React.FC<ViewProps> = ({ data, onAuditClick }) => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [progress, setProgress] = useState(0);
     const [time, setTime] = useState(new Date());
@@ -149,13 +149,13 @@ const Retro95View: React.FC<ViewProps> = ({ data }) => {
                         <hr className="border-t border-gray-400 mb-4" />
 
                         <div className="flex justify-center gap-4 flex-wrap font-tahoma">
-                            <a
-                                href={`mailto:${data.senderEmail}`}
+                            <button
+                                onClick={onAuditClick}
                                 className="group bg-[#c0c0c0] text-black text-xs font-bold px-4 py-2 border-t-2 border-l-2 border-white border-b-2 border-r-2 border-black active:border-t-black active:border-l-black active:border-b-white active:border-r-white active:bg-gray-300 no-underline flex items-center gap-2 hover:bg-[#d4d4d4]"
                             >
                                 <Save size={14} />
                                 <span><span className="underline">A</span>cceptar Oferta</span>
-                            </a>
+                            </button>
                             <a
                                 href={data.portfolioUrl}
                                 target="_blank"

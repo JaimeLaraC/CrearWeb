@@ -8,6 +8,7 @@ import Retro95View from '@/components/views/Retro95View';
 import SketchView from '@/components/views/SketchView';
 import WindowsXPView from '@/components/views/WindowsXPView';
 import SwissView from '@/components/views/SwissView';
+import AuditModule from '@/components/AuditModule';
 
 // --- CONFIGURATION ---
 // Change these values to personalize the pitch for your client
@@ -15,23 +16,41 @@ const INITIAL_CLIENT_DATA: ClientData = {
     businessName: "", // Left empty for generic mode
     senderName: "Jaime Lara",
     senderEmail: "contacto@email.com",
-    portfolioUrl: "https://jaimelarac.github.io/WebProfesional/"
+    portfolioUrl: "https://jaimelarac.github.io/WebProfesional/",
+    audit: {
+        score: 42,
+        loadTime: "3.8s",
+        accessibility: 65,
+        issues: [
+            "Mobile Layout Broken",
+            "Low Contrast Text",
+            "Slow Server Response",
+            "Non-Semantic HTML"
+        ],
+        projectedConversionIncrease: "35%"
+    }
 };
 
 const App: React.FC = () => {
     const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.Collage);
     const [clientData] = useState<ClientData>(INITIAL_CLIENT_DATA);
+    const [isAuditOpen, setIsAuditOpen] = useState(false);
+
+    const handleAuditClick = () => {
+        setIsAuditOpen(true);
+    };
 
     const renderView = () => {
+        const props = { data: clientData, onAuditClick: handleAuditClick };
         switch (currentTheme) {
-            case Theme.Collage: return <CollageView data={clientData} />;
-            case Theme.Editorial: return <EditorialView data={clientData} />;
-            case Theme.Industrial: return <IndustrialView data={clientData} />;
-            case Theme.Retro95: return <Retro95View data={clientData} />;
-            case Theme.Sketch: return <SketchView data={clientData} />;
-            case Theme.WindowsXP: return <WindowsXPView data={clientData} />;
-            case Theme.Swiss: return <SwissView data={clientData} />;
-            default: return <CollageView data={clientData} />;
+            case Theme.Collage: return <CollageView {...props} />;
+            case Theme.Editorial: return <EditorialView {...props} />;
+            case Theme.Industrial: return <IndustrialView {...props} />;
+            case Theme.Retro95: return <Retro95View {...props} />;
+            case Theme.Sketch: return <SketchView {...props} />;
+            case Theme.WindowsXP: return <WindowsXPView {...props} />;
+            case Theme.Swiss: return <SwissView {...props} />;
+            default: return <CollageView {...props} />;
         }
     };
 
@@ -59,6 +78,14 @@ const App: React.FC = () => {
             <div className="w-full h-full animate-[fadeIn_0.5s_ease-out]">
                 {renderView()}
             </div>
+
+            {/* Audit Module */}
+            <AuditModule
+                isOpen={isAuditOpen}
+                onClose={() => setIsAuditOpen(false)}
+                theme={currentTheme}
+                data={clientData}
+            />
 
             <style>{`
                 @keyframes fadeIn {
