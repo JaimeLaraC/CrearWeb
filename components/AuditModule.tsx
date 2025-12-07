@@ -36,8 +36,8 @@ const AuditModule: React.FC<AuditModuleProps> = ({ isOpen, onClose, theme, data 
     if (!isOpen) return null;
 
     // --- SHARED DATA GENERATORS ---
-    const whatsappUrl = `https://wa.me/34722683336?text=${encodeURIComponent("Hola, quiero arreglar los errores de mi web.")}`;
-    const mailtoUrl = `mailto:jailacont2003@gmail.com?subject=${encodeURIComponent("Auditoría Web")}&body=${encodeURIComponent("Hola, me interesa el informe.")}`;
+    const whatsappUrl = `https://wa.me/34722683336?text=${encodeURIComponent("Hola, estoy interesado en tus servicios de creación de web.")}`;
+    const mailtoUrl = `mailto:jailacont2003@gmail.com?subject=${encodeURIComponent("Interesado en servicios de creación web")}&body=${encodeURIComponent("Hola, estoy interesado en tus servicios de creación de web.")}`;
 
     // --- THEME SPECIFIC RENDERERS ---
 
